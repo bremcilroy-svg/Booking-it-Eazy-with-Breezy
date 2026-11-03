@@ -284,3 +284,39 @@
     stroke-linecap: round;
   }
 }
+/* Breezy's animated ocean waves */
+
+#wave-menu-toggle svg path {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#wave-menu-toggle.is-animating svg path {
+  animation: breezyWave 0.65s ease-in-out;
+}
+
+#wave-menu-toggle.is-animating svg path:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+#wave-menu-toggle.is-animating svg path:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes breezyWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-5px);
+  }
+  70% {
+    transform: translateY(3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #wave-menu-toggle.is-animating svg path {
+    animation: none;
+  }
+}
