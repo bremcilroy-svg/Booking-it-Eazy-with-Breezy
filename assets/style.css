@@ -11,3 +11,13 @@
   border: 3px solid rgba(255,255,255,0.7);
   box-shadow: 0 12px 35px rgba(0,0,0,0.25);
 }
+/* Breezy's homepage background */
+#page-home .hero {
+  background:
+    linear-gradient(
+      rgba(15, 10, 40, 0.35),
+      rgba(15, 10, 40, 0.65)
+    ),
+    url("../hero-paradise.jpg")
+    center / cover no-repeat;
+}
