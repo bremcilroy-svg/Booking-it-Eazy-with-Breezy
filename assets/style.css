@@ -253,3 +253,34 @@
     padding: 13px;
   }
 }
+/* Breezy's mobile wave navigation */
+@media (max-width: 768px) {
+  #main-nav {
+    display: none;
+  }
+
+  #main-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  #wave-menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    z-index: 100;
+  }
+
+  #wave-menu-toggle svg {
+    width: 40px;
+    height: 40px;
+    fill: none;
+    stroke: #ffd76a;
+    stroke-width: 5;
+    stroke-linecap: round;
+  }
+}
