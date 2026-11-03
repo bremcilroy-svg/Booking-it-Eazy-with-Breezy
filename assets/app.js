@@ -43,8 +43,13 @@ function setupWaveMenu() {
 
   if (!waveButton || !menu) return;
 
-  waveButton.addEventListener("click", function () {
-    const isOpen = menu.classList.toggle("is-open");
+  
+waveButton.addEventListener("click", function () {
+  waveButton.classList.remove("is-animating");
+  void waveButton.offsetWidth;
+  waveButton.classList.add("is-animating");
+
+  const isOpen = menu.classList.toggle("is-open");
 
     waveButton.setAttribute("aria-expanded", String(isOpen));
     waveButton.setAttribute(
