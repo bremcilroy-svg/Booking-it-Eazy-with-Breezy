@@ -35,30 +35,6 @@ function pop(e){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches
 function init(){document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();go(b.dataset.page);if(b.classList.contains('btn'))pop(e);}));document.querySelectorAll('[data-trip]').forEach(b=>b.addEventListener('click',()=>quoteTrip(b.dataset.trip)));document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));cruiseFilter(b.dataset.filter);}));cruiseFilter('all');$('spin-palms').addEventListener('click',()=>$('palms').classList.toggle('spinning'));$('estimate-form').addEventListener('input',estimate);estimate();$('estimate-to-quote').addEventListener('click',()=>quoteTrip(`${$('calc-line').selectedOptions[0].text} • ${$('calc-nights').value} nights • ${$('calc-cabin').value} • illustrative ${$('calc-total').textContent}`));$('quote-form').addEventListener('submit',sendQuote);$('auth-form').addEventListener('submit',e=>{e.preventDefault();authAction(false);});$('signup').addEventListener('click',()=>authAction(true));for(const id of ['signout','office-signout'])$(id).addEventListener('click',async()=>{if(db)await db.auth.signOut();session=null;isAdmin=false;go('portal');});document.querySelectorAll('[data-office]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-office]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.office-panel').forEach(p=>p.classList.toggle('hidden',p.id!=='office-'+b.dataset.office));}));$('booking-form').addEventListener('submit',addBooking);$('post-form').addEventListener('submit',savePost);['c-gross','c-rate','c-split'].forEach(id=>$(id).addEventListener('input',commission));showStudy();if(db)db.auth.onAuthStateChange(()=>{setTimeout(refreshAuth,0);});go(location.hash.slice(1)||'home');if(!db)console.warn('Configure Supabase in config.js before publishing.');}
 window.addEventListener('DOMContentLoaded',init);
 
-/* Three-wave navigation */
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("wave-menu-toggle");
-  const nav = document.getElementById("main-nav");
-
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute(
-      "aria-label",
-      open ? "Close navigation menu" : "Open navigation menu"
-    );
-  });
-
-  nav.addEventListener("click", (event) => {
-    if (event.target.closest("button[data-page]")) {
-      nav.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open navigation menu");
-    }
-  });
-});
 
 /* Breezy's clickable wave menu */
 function setupWaveMenu() {
