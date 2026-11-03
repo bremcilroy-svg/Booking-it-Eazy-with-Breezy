@@ -199,3 +199,57 @@
     padding: 13px;
   }
 }
+
+/* Fix mobile wave navigation */
+@media (max-width: 1100px) {
+  .navwrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .wave-menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 44px;
+    padding: 7px;
+    margin-left: auto;
+    background: #20113c;
+    border: 1px solid #f9d36b;
+    border-radius: 12px;
+    color: #f9d36b;
+    cursor: pointer;
+  }
+
+  .wave-menu-toggle svg {
+    display: block;
+    width: 34px;
+    height: 28px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 6;
+    stroke-linecap: round;
+  }
+
+  #main-nav {
+    display: none !important;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+    gap: 8px;
+  }
+
+  #main-nav.is-open {
+    display: flex !important;
+  }
+
+  #main-nav button {
+    width: 100%;
+    text-align: left;
+    padding: 13px;
+  }
+}
