@@ -59,3 +59,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+/* Breezy's clickable wave menu */
+function setupWaveMenu() {
+  const waveButton = document.getElementById("wave-menu-toggle");
+  const menu = document.getElementById("main-nav");
+
+  if (!waveButton || !menu) return;
+
+  waveButton.addEventListener("click", function () {
+    const isOpen = menu.classList.toggle("is-open");
+
+    waveButton.setAttribute("aria-expanded", String(isOpen));
+    waveButton.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+  });
+
+  menu.querySelectorAll("button[data-page]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      menu.classList.remove("is-open");
+      waveButton.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupWaveMenu);
+} else {
+  setupWaveMenu();
+}
