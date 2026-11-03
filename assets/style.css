@@ -320,3 +320,38 @@
     animation: none;
   }
 }
+/* Breezy's Blue & Silver Ocean Crests */
+
+#wave-menu-toggle {
+  background: #170b30;
+  border: 1px solid #a8cce8;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(100, 190, 255, 0.2);
+}
+
+#wave-menu-toggle svg {
+  width: 42px;
+  height: 36px;
+  fill: none;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: miter;
+}
+
+#wave-menu-toggle svg path:nth-child(1) {
+  stroke: #bdeaff;
+}
+
+#wave-menu-toggle svg path:nth-child(2) {
+  stroke: #e4eaf4;
+}
+
+#wave-menu-toggle svg path:nth-child(3) {
+  stroke: #55baf5;
+}
+
+/* Subtle ocean shimmer */
+#wave-menu-toggle:active {
+  box-shadow: 0 0 18px rgba(100, 200, 255, 0.55);
+}
+
