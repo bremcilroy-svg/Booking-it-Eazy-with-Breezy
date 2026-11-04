@@ -411,3 +411,14 @@
   z-index: 1;
   margin-top: 16px;
 }
+/* Make Breezy's specialist button clickable */
+#spin-palms {
+  position: relative !important;
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+}
+
+#specialist-details {
+  position: relative;
+  z-index: 1;
+}
