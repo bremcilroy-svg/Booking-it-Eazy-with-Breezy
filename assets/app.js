@@ -81,8 +81,9 @@ function setupSpecialistDropdown() {
   if (!button || !details) return;
 
   button.addEventListener("click", function () {
-    const willOpen = details.hidden;
+  alert("Breezy's button is working! 🌴");
 
+  const willOpen = details.hidden;
     details.hidden = !willOpen;
 
     button.setAttribute(
