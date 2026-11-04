@@ -82,6 +82,7 @@ function setupSpecialistDropdown() {
 
   button.addEventListener("click", function () {
 
+    
   const willOpen = details.hidden;
     details.hidden = !willOpen;
 
