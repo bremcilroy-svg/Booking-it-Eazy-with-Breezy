@@ -32,7 +32,7 @@ async function savePost(e){e.preventDefault();let url=$('p-image').value.trim();
 function commission(){const gross=Math.max(0,Number($('c-gross').value)||0),rate=Math.min(100,Math.max(0,Number($('c-rate').value)||0)),split=Math.min(100,Math.max(0,Number($('c-split').value)||0));$('commission-result').textContent=money(gross*rate/100*split/100);}
 function showStudy(){ $('study-content').innerHTML=study.map((s,i)=>`<div class="list-item"><h3>${safe(s.name)}</h3><p>${safe(s.text)}</p><p><strong>${safe(s.q)}</strong></p>${s.answers.map((a,j)=>`<button class="btn small alt" style="margin:4px" data-study="${i}" data-answer="${j}">${safe(a)}</button>`).join('')}<p id="study-feedback-${i}" aria-live="polite"></p></div>`).join('');document.querySelectorAll('[data-study]').forEach(b=>b.addEventListener('click',()=>{$('study-feedback-'+b.dataset.study).textContent=Number(b.dataset.answer)===study[Number(b.dataset.study)].correct?'Correct! This is practice only.':'Not quite. Review the lesson and try again.';}));}
 function pop(e){if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const el=document.createElement('span');el.className='emoji';el.textContent=['🦜','🐬','🐢','🌺','🐠'][Math.floor(Math.random()*5)];el.style.left=(e.clientX||innerWidth/2)+'px';el.style.top=(e.clientY||innerHeight/2)+'px';document.body.appendChild(el);setTimeout(()=>el.remove(),950);}
-function init(){document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();go(b.dataset.page);if(b.classList.contains('btn'))pop(e);}));document.querySelectorAll('[data-trip]').forEach(b=>b.addEventListener('click',()=>quoteTrip(b.dataset.trip)));document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));cruiseFilter(b.dataset.filter);}));cruiseFilter('all');$('spin-palms').addEventListener('click',()=>$('palms').classList.toggle('spinning'));$('estimate-form').addEventListener('input',estimate);estimate();$('estimate-to-quote').addEventListener('click',()=>quoteTrip(`${$('calc-line').selectedOptions[0].text} • ${$('calc-nights').value} nights • ${$('calc-cabin').value} • illustrative ${$('calc-total').textContent}`));$('quote-form').addEventListener('submit',sendQuote);$('auth-form').addEventListener('submit',e=>{e.preventDefault();authAction(false);});$('signup').addEventListener('click',()=>authAction(true));for(const id of ['signout','office-signout'])$(id).addEventListener('click',async()=>{if(db)await db.auth.signOut();session=null;isAdmin=false;go('portal');});document.querySelectorAll('[data-office]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-office]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.office-panel').forEach(p=>p.classList.toggle('hidden',p.id!=='office-'+b.dataset.office));}));$('booking-form').addEventListener('submit',addBooking);$('post-form').addEventListener('submit',savePost);['c-gross','c-rate','c-split'].forEach(id=>$(id).addEventListener('input',commission));showStudy();if(db)db.auth.onAuthStateChange(()=>{setTimeout(refreshAuth,0);});go(location.hash.slice(1)||'home');if(!db)console.warn('Configure Supabase in config.js before publishing.');}
+function init(){document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();go(b.dataset.page);if(b.classList.contains('btn'))pop(e);}));document.querySelectorAll('[data-trip]').forEach(b=>b.addEventListener('click',()=>quoteTrip(b.dataset.trip)));document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));cruiseFilter(b.dataset.filter);}));cruiseFilter('all');$('estimate-form').addEventListener('input',estimate);estimate();$('estimate-to-quote').addEventListener('click',()=>quoteTrip(`${$('calc-line').selectedOptions[0].text} • ${$('calc-nights').value} nights • ${$('calc-cabin').value} • illustrative ${$('calc-total').textContent}`));$('quote-form').addEventListener('submit',sendQuote);$('auth-form').addEventListener('submit',e=>{e.preventDefault();authAction(false);});$('signup').addEventListener('click',()=>authAction(true));for(const id of ['signout','office-signout'])$(id).addEventListener('click',async()=>{if(db)await db.auth.signOut();session=null;isAdmin=false;go('portal');});document.querySelectorAll('[data-office]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-office]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.office-panel').forEach(p=>p.classList.toggle('hidden',p.id!=='office-'+b.dataset.office));}));$('booking-form').addEventListener('submit',addBooking);$('post-form').addEventListener('submit',savePost);['c-gross','c-rate','c-split'].forEach(id=>$(id).addEventListener('input',commission));showStudy();if(db)db.auth.onAuthStateChange(()=>{setTimeout(refreshAuth,0);});go(location.hash.slice(1)||'home');if(!db)console.warn('Configure Supabase in config.js before publishing.');}
 window.addEventListener('DOMContentLoaded',init);
 
 
@@ -73,31 +73,27 @@ if (document.readyState === "loading") {
 }
 
 /* Breezy's Travel Specialist Dropdown */
-
 function setupSpecialistDropdown() {
   const button = document.getElementById("spin-palms");
   const details = document.getElementById("specialist-details");
+  const palms = document.getElementById("palms");
 
   if (!button || !details) return;
 
   button.addEventListener("click", function () {
+    const opening = details.hidden;
 
-    
-  const willOpen = details.hidden;
-    details.hidden = !willOpen;
+    details.hidden = !opening;
+    button.setAttribute("aria-expanded", String(opening));
 
-    button.setAttribute(
-      "aria-expanded",
-      String(willOpen)
-    );
+    if (palms) {
+      palms.classList.toggle("spinning", opening);
+    }
   });
 }
 
 if (document.readyState === "loading") {
-  document.addEventListener(
-    "DOMContentLoaded",
-    setupSpecialistDropdown
-  );
+  document.addEventListener("DOMContentLoaded", setupSpecialistDropdown);
 } else {
   setupSpecialistDropdown();
 }
