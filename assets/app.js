@@ -71,3 +71,33 @@ if (document.readyState === "loading") {
 } else {
   setupWaveMenu();
 }
+
+/* Breezy's Travel Specialist Dropdown */
+
+function setupSpecialistDropdown() {
+  const button = document.getElementById("spin-palms");
+  const details = document.getElementById("specialist-details");
+
+  if (!button || !details) return;
+
+  button.addEventListener("click", function () {
+    const willOpen = details.hidden;
+
+    details.hidden = !willOpen;
+
+    button.setAttribute(
+      "aria-expanded",
+      String(willOpen)
+    );
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    setupSpecialistDropdown
+  );
+} else {
+  setupSpecialistDropdown();
+}
+
