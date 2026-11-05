@@ -448,3 +448,22 @@
 #palms {
   pointer-events: none;
 }
+/* Breezy's enchanted owl-inspired name */
+.brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #dcecff;
+  text-shadow:
+    0 0 6px rgba(120, 190, 255, 0.7),
+    0 0 14px rgba(190, 170, 255, 0.5);
+}
+
+.brand::before {
+  content: "🦉 ";
+}
+
+.brand small {
+  color: #b9d9f4;
+  letter-spacing: 2px;
+}
