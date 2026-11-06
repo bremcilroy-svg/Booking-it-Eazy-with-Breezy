@@ -496,3 +496,53 @@
   border-radius: 30px;
   text-align: center;
 }
+/* Breezy's brighter, easier-to-read buttons */
+
+button.btn,
+a.btn,
+.btn {
+  background: linear-gradient(
+    120deg,
+    #ffcf33 0%,
+    #ff914d 50%,
+    #ef476f 100%
+  );
+  color: #19112c !important;
+  font-weight: 800;
+  border: 2px solid #ffe28a;
+  border-radius: 30px;
+  padding: 14px 24px;
+  text-shadow: none !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  transition: transform .2s, box-shadow .2s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(255,180,80,.35);
+}
+
+.btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Keep secondary buttons readable */
+.btn.secondary,
+.btn.outline {
+  background: rgba(20, 35, 65, .92);
+  color: #ffffff !important;
+  border: 2px solid #75e6ff;
+}
+
+/* Don't change the travel specialist dropdown */
+#spin-palms {
+  background: linear-gradient(
+    120deg,
+    #368ac4,
+    #d5e9fa
+  );
+  color: #10243d !important;
+  border: none;
+}
