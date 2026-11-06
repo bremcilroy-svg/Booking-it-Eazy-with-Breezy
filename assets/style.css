@@ -574,3 +574,106 @@ a.btn,
   ) !important;
   color: #ffffff !important;
 }
+/* BREEZY'S ANIMATED TROPICAL MENU */
+
+#main-nav button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.nav-animal {
+  display: inline-block;
+  font-size: 26px;
+  line-height: 1.2;
+  flex-shrink: 0;
+  transform-origin: center;
+}
+
+/* Owl gently waves */
+#main-nav.is-open .owl {
+  animation: owlWave 2.2s ease-in-out infinite;
+}
+
+/* Dolphin jumps */
+#main-nav.is-open .dolphin {
+  animation: dolphinJump 2.5s ease-in-out infinite;
+}
+
+/* Turtle slowly walks */
+#main-nav.is-open .turtle {
+  animation: turtleWalk 3s ease-in-out infinite;
+}
+
+/* Parrot flutters */
+#main-nav.is-open .parrot {
+  animation: parrotFlutter 1.4s ease-in-out infinite;
+}
+
+/* Monkey swings */
+#main-nav.is-open .monkey {
+  animation: monkeySwing 2s ease-in-out infinite;
+}
+
+/* Palm tree sways */
+#main-nav.is-open .tropical {
+  animation: palmSway 2.5s ease-in-out infinite;
+}
+
+/* Koala gently rocks */
+#main-nav.is-open .koala {
+  animation: koalaRock 3s ease-in-out infinite;
+}
+
+/* Shark swims */
+#main-nav.is-open .shark {
+  animation: sharkSwim 2.5s ease-in-out infinite;
+}
+
+@keyframes owlWave {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(12deg); }
+}
+
+@keyframes dolphinJump {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-9px) rotate(-15deg); }
+}
+
+@keyframes turtleWalk {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(7px); }
+}
+
+@keyframes parrotFlutter {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(15deg) scale(1.1); }
+}
+
+@keyframes monkeySwing {
+  0%, 100% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes palmSway {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(8deg); }
+}
+
+@keyframes koalaRock {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes sharkSwim {
+  0%, 100% { transform: translateX(-5px); }
+  50% { transform: translateX(8px); }
+}
+
+/* Keep animations comfortable */
+@media (prefers-reduced-motion: reduce) {
+  .nav-animal {
+    animation: none !important;
+  }
+}
