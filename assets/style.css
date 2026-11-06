@@ -471,3 +471,28 @@
   line-height: 1.7;
 }
 
+
+/* Breezy's owl introduction */
+.breezy-owl-art {
+  margin: 0 auto 12px;
+}
+
+.breezy-owl-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+/* Travel Specialist contact button */
+#specialist-details .btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #7c3aed, #38bdf8);
+  color: #ffffff !important;
+  font-weight: 700;
+  border: 1px solid #c4b5fd;
+  border-radius: 30px;
+  text-align: center;
+}
