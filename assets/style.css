@@ -720,3 +720,44 @@ a.btn,
     flex-shrink: 0;
   }
 }
+/* FIX BREEZY'S MOBILE ANIMAL MENU */
+
+@media (max-width: 768px) {
+
+  #main-nav {
+    display: none !important;
+    width: 100%;
+    flex-direction: column !important;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  #main-nav.is-open {
+    display: flex !important;
+  }
+
+  #main-nav button {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 14px 18px;
+    gap: 14px;
+
+    background: linear-gradient(
+      135deg,
+      #30204f,
+      #17365c
+    ) !important;
+
+    color: white !important;
+    border: 1px solid #8b7cc6 !important;
+    border-radius: 14px;
+    text-align: left;
+    font-weight: 700;
+  }
+
+  #main-nav .nav-animal {
+    font-size: 26px;
+  }
+}
