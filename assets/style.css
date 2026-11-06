@@ -677,3 +677,46 @@ a.btn,
     animation: none !important;
   }
 }
+/* BREEZY'S TROPICAL NAVIGATION MENU */
+
+@media (max-width: 768px) {
+
+  #main-nav {
+    display: none !important;
+    width: 100%;
+    flex-direction: column !important;
+    gap: 10px;
+    padding: 16px 0;
+  }
+
+  #main-nav.is-open {
+    display: flex !important;
+  }
+
+  #main-nav button {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 16px;
+    padding: 15px 18px;
+    border-radius: 16px;
+
+    background: linear-gradient(
+      120deg,
+      #30204f,
+      #18375c
+    ) !important;
+
+    color: #ffffff !important;
+    border: 1px solid #8b7cc6 !important;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  #main-nav .nav-animal {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+}
