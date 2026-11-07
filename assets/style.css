@@ -1249,3 +1249,59 @@ header.site-header > .palm-tree {
   height: 65px !important;
   z-index: 4 !important;
 }
+/* ======================================
+   BREEZY RESPONSIVE TROPICAL HEADER
+   ====================================== */
+
+.header {
+  position: relative !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+
+  background-image: none !important;
+  background-color: #170927 !important;
+}
+
+/* Navigation stays above the artwork */
+.header .navwrap {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  min-height: 84px !important;
+  padding: 12px 16px !important;
+  background: #170927 !important;
+}
+
+/* Artwork with its natural proportions */
+.header::after {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  background-image: url("../assets/tropical-header.png") !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Ship sails over the lower ocean */
+.header .ship-ocean {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 3% !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 65px !important;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+
+/* Keep ship small */
+.header .moving-cruise-ship {
+  width: 105px !important;
+}
