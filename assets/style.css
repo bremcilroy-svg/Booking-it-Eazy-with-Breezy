@@ -932,32 +932,46 @@ body:not(.on-home) .ship-ocean {
 }
 /* Hide the ship behind the tropical flowers */
 
-.header .tropical-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 4;
-  pointer-events: none;
+/* Cruise ship enters and exits behind flowers */
 
-  background: linear-gradient(
-    90deg,
-    #170927 0%,
-    transparent 13%,
-    transparent 87%,
-    #170927 100%
-  );
+.header .ship-ocean {
+  position: absolute !important;
+  inset: auto 0 5% 0 !important;
+  height: 55px !important;
+  overflow: hidden !important;
+  z-index: 3 !important;
 
   -webkit-mask-image: linear-gradient(
-    to top,
-    black 0%,
-    black 24%,
-    transparent 38%
-  );
+    to right,
+    transparent 0%,
+    black 18%,
+    black 82%,
+    transparent 100%
+  ) !important;
 
   mask-image: linear-gradient(
-    to top,
-    black 0%,
-    black 24%,
-    transparent 38%
-  );
+    to right,
+    transparent 0%,
+    black 18%,
+    black 82%,
+    transparent 100%
+  ) !important;
+}
+
+.header .moving-cruise-ship {
+  position: absolute !important;
+  width: 100px !important;
+  top: 0 !important;
+  left: 0 !important;
+  animation: breezyFlowerSail 14s linear infinite !important;
+}
+
+@keyframes breezyFlowerSail {
+  from {
+    transform: translateX(100vw) scaleX(-1);
+  }
+
+  to {
+    transform: translateX(-110px) scaleX(-1);
+  }
 }
