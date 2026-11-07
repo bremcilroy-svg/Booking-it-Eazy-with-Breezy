@@ -1001,7 +1001,6 @@ header.site-header > .palm-tree {
   }
 
   100% {
-    left: 0;
     transform: translate(-100%, -50%);
     opacity: 1;
   }
