@@ -876,3 +876,37 @@ header.site-header > .palm-tree {
     margin-inline: auto;
   }
 }
+/* CENTER TITLE WITH SHIP ON LEFT */
+
+.header .brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.header .brand-name {
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: center !important;
+}
+
+/* KEEP THE SHIP BESIDE THE TITLE */
+.header .brand > .ship,
+.header .brand > .brand-icon {
+  flex-shrink: 0;
+}
+
+/* CENTER TITLE ON MOBILE */
+@media (max-width: 768px) {
+  .header .brand {
+    margin: 0 auto !important;
+  }
+
+  .header .brand-name {
+    font-size: clamp(26px, 6vw, 42px) !important;
+  }
+}
