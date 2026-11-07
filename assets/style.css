@@ -957,3 +957,51 @@ header.site-header > .palm-tree {
   }
 }
 
+/* BREEZY'S TROPICAL HEADER */
+
+.header {
+  position: relative;
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(192, 86, 151, 0.32),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      #130522 0%,
+      #321447 55%,
+      #142e4c 100%
+    );
+  overflow: hidden;
+}
+
+/* Tropical palm trees framing the header */
+.header::before,
+.header::after {
+  position: absolute;
+  bottom: 0;
+  font-size: clamp(65px, 16vw, 135px);
+  line-height: 1;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header::before {
+  content: "🌴";
+  left: -18px;
+  transform: rotate(-15deg);
+}
+
+.header::after {
+  content: "🌴";
+  right: -18px;
+  transform: scaleX(-1) rotate(-15deg);
+}
+
+/* Keep the header content above the palms */
+.header .navwrap {
+  position: relative;
+  z-index: 1;
+}
