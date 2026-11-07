@@ -911,59 +911,49 @@ header.site-header > .palm-tree {
   }
 }
 
-/* FIX: Continuous sailing cruise ship */
 
-@keyframes breezyShipLoop {
-  0% {
-    left: 100%;
-    transform: translateY(-50%);
-  }
+/* BREEZY'S CONTINUOUS SAILING SHIP */
 
-  100% {
-    left: 0%;
-    transform: translate(-100%, -50%);
-  }
-}
-
-.header .sailing-ship {
-  position: absolute !important;
-  top: 50% !important;
-  left: 100%;
-  z-index: 1 !important;
-  display: block !important;
-  opacity: 1;
-  font-size: 38px;
-  pointer-events: none;
-
-  animation-name: breezyShipLoop !important;
-  animation-duration: 9s !important;
-  animation-timing-function: linear !important;
-  animation-iteration-count: infinite !important;
-  animation-delay: 0s !important;
-  animation-fill-mode: none !important;
+.header .brand {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .header .brand-name {
   position: relative;
   z-index: 2;
- }
 }
-/* TEMPORARY SHIP LOOP TEST */
 
 .header .sailing-ship {
-  animation: none !important;
-  animation: breezyTestSail 5s linear infinite !important;
-  opacity: 1 !important;
-  visibility: visible !important;
+  position: absolute !important;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  display: block;
+  font-size: 38px;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+
+  animation: breezySailing 8s linear infinite !important;
 }
 
-@keyframes breezyTestSail {
+@keyframes breezySailing {
   from {
-    left: 100%;
-    transform: translateY(-50%);
+    transform: translate(100vw, -50%);
   }
+
   to {
-    left: 0;
     transform: translate(-100%, -50%);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .header .sailing-ship {
+    animation: none !important;
+    opacity: 0;
+  }
+}
+
