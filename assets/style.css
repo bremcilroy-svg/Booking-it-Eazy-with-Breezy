@@ -1173,3 +1173,10 @@ header.site-header > .palm-tree {
   height: 100% !important;
   max-width: 100% !important;
 }
+/* FINAL TROPICAL HEADER ADJUSTMENTS */
+
+.header {
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
