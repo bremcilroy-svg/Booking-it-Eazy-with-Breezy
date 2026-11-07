@@ -1037,9 +1037,44 @@ header.site-header > .palm-tree {
   }
 }
 
+
+/* BREEZY'S SHIP SAILING OVER THE OCEAN */
+
+.header .ship-ocean {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: auto !important;
+  bottom: 65px !important;
+  width: 100% !important;
+  height: 75px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.header .moving-cruise-ship {
+  position: absolute !important;
+  width: 100px !important;
+  height: auto !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  top: auto !important;
+  animation: breezyOceanSail 12s linear infinite !important;
+}
+
+@keyframes breezyOceanSail {
+  from {
+    transform: translateX(100vw) scaleX(-1);
+  }
+
+  to {
+    transform: translateX(-110px) scaleX(-1);
+  }
+}
+
 /* Keep navigation above the animation */
 .header .navwrap {
   position: relative;
   z-index: 3;
 }
-
