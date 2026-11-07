@@ -1078,3 +1078,45 @@ header.site-header > .palm-tree {
   position: relative;
   z-index: 3;
 }
+
+/* FIX: CRUISE SHIP SAILS ACROSS THE WATER */
+
+.header {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.header .ship-ocean {
+  position: absolute !important;
+  top: 68% !important;
+  bottom: auto !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 65px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 4 !important;
+}
+
+.header .moving-cruise-ship {
+  position: absolute !important;
+  display: block !important;
+  width: 105px !important;
+  height: auto !important;
+  top: 0 !important;
+  bottom: auto !important;
+  left: 0 !important;
+  right: auto !important;
+  animation: breezyWaterCruise 14s linear infinite !important;
+}
+
+@keyframes breezyWaterCruise {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-110px);
+  }
+}
+
