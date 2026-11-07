@@ -1069,56 +1069,85 @@ body:not(.on-home) .ship-ocean {
 .header .tropical-brand-title {
   display: none !important;
 }
-/* FIX HEADER LAYOUT - VERSION 35 */
+/* BREEZY'S CLEAN HEADER LAYOUT */
 
 .header {
   display: flex !important;
   flex-direction: column !important;
   position: relative !important;
+  width: 100% !important;
   padding: 0 !important;
+  overflow: visible !important;
+  background: #170927 !important;
 }
 
+/* Wave navigation first */
 .header .navwrap {
   order: 1 !important;
+  width: 100% !important;
   padding: 8px 14px !important;
+  margin: 0 !important;
 }
 
+/* Full tropical artwork second */
 .header .tropical-banner {
   order: 2 !important;
   position: relative !important;
   display: block !important;
   width: 100% !important;
-  aspect-ratio: 3 / 2 !important;
   height: auto !important;
   min-height: 0 !important;
-  margin: 0 !important;
-  background-image: url("../assets/tropical-header.png") !important;
-  background-size: 100% 100% !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  overflow: hidden !important;
-}
-
-  /* Match the original image proportions */
   aspect-ratio: 3 / 1 !important;
-  height: auto !important;
+  margin: 0 !important;
 
   background-image: url("../assets/tropical-header.png") !important;
   background-size: 100% 100% !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-
-  margin: 0 !important;
   overflow: hidden !important;
 }
 
+/* Plan My Trip beneath the artwork */
 .header .header-trip-bar {
   order: 3 !important;
   position: relative !important;
-  padding: 12px 16px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 14px 16px !important;
+  margin: 0 !important;
   background: #170927 !important;
 }
 
+/* The original beautiful lettering is in the image */
 .header .tropical-brand-title {
   display: none !important;
+}
+
+/* Ship positioned on the distant ocean */
+.header .ship-ocean {
+  position: absolute !important;
+  inset: auto 0 12% 0 !important;
+  width: 100% !important;
+  height: 55px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+}
+
+/* Keep the small sailing ship */
+.header .moving-cruise-ship {
+  position: absolute !important;
+  width: 70px !important;
+  height: auto !important;
+  top: 0 !important;
+  left: 0 !important;
+  animation: breezyFlowerSail 14s linear infinite !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .moving-cruise-ship {
+    animation: none !important;
+  }
 }
