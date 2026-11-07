@@ -854,14 +854,27 @@ a.btn,
 
 /* Ship sails right to left */
 
+
 @keyframes breezySail {
-  from {
+  0% {
     transform: translateX(100vw) scaleX(-1);
+    opacity: 0;
   }
-  to {
+
+  12% {
+    opacity: 1;
+  }
+
+  88% {
+    opacity: 1;
+  }
+
+  100% {
     transform: translateX(-110px) scaleX(-1);
+    opacity: 0;
   }
 }
+
 
 /* Purple bar beneath the picture */
 
@@ -916,4 +929,35 @@ body:not(.on-home) .ship-ocean {
   .header .moving-cruise-ship {
     animation: none;
   }
+}
+/* Hide the ship behind the tropical flowers */
+
+.header .tropical-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    #170927 0%,
+    transparent 13%,
+    transparent 87%,
+    #170927 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to top,
+    black 0%,
+    black 24%,
+    transparent 38%
+  );
+
+  mask-image: linear-gradient(
+    to top,
+    black 0%,
+    black 24%,
+    transparent 38%
+  );
 }
