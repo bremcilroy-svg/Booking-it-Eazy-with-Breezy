@@ -1088,6 +1088,16 @@ body:not(.on-home) .ship-ocean {
   position: relative !important;
   display: block !important;
   width: 100% !important;
+  aspect-ratio: 3 / 2 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  background-image: url("../assets/tropical-header.png") !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+}
 
   /* Match the original image proportions */
   aspect-ratio: 3 / 1 !important;
