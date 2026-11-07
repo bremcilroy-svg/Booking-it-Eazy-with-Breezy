@@ -1123,3 +1123,16 @@ header.site-header > .palm-tree {
   position: relative;
   z-index: 3;
 }
+/* TEMPORARY SHIP ANIMATION TEST */
+.header .ship-ocean .moving-cruise-ship {
+  animation: breezyShipTest 4s linear infinite !important;
+}
+
+@keyframes breezyShipTest {
+  0% {
+    transform: translateX(100vw) !important;
+  }
+  100% {
+    transform: translateX(-150px) !important;
+  }
+}
