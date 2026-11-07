@@ -1129,10 +1129,10 @@ header.site-header > .palm-tree {
 }
 
 @keyframes breezyShipTest {
-  0% {
-    transform: translateX(100vw) !important;
+  from {
+    transform: translateX(100vw);
   }
-  100% {
-    transform: translateX(-150px) !important;
+  to {
+    transform: translateX(-150px);
   }
 }
