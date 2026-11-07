@@ -975,3 +975,14 @@ body:not(.on-home) .ship-ocean {
     transform: translateX(-110px) scaleX(-1);
   }
 }
+/* Ship farther away, near the horizon */
+
+.header .ship-ocean {
+  bottom: 19% !important;
+  height: 55px !important;
+}
+
+.header .moving-cruise-ship {
+  width: 70px !important;
+  top: 0 !important;
+}
