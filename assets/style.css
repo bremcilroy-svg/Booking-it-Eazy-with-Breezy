@@ -1024,13 +1024,14 @@ header.site-header > .palm-tree {
   animation: breezyOceanSail 12s linear infinite !important;
 }
 
+
 @keyframes breezyOceanSail {
-  0% {
-    transform: translateX(100vw);
+  from {
+    transform: translateX(100vw) scaleX(-1);
   }
 
-  100% {
-    transform: translateX(-150px);
+  to {
+    transform: translateX(-150px) scaleX(-1);
   }
 }
 
