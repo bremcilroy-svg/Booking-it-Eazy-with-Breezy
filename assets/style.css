@@ -1065,3 +1065,7 @@ body:not(.on-home) .ship-ocean {
     0 0 8px #f0aaff,
     0 0 18px #b94eff;
 }
+/* Original lettering is already in the artwork */
+.header .tropical-brand-title {
+  display: none !important;
+}
