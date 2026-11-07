@@ -808,7 +808,7 @@ a.btn,
   order: 2;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   background-image: url("../assets/tropical-header.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -823,7 +823,7 @@ a.btn,
   z-index: 4;
   left: 0;
   right: 0;
-  bottom: 3%;
+  bottom: 10%;
   width: 100%;
   height: 65px;
   overflow: hidden;
