@@ -910,7 +910,7 @@ header.site-header > .palm-tree {
     font-size: clamp(26px, 6vw, 42px) !important;
   }
 }
-/* BREEZY'S SAILING CRUISE SHIP */
+/* BREEZY'S CLEAN SAILING SHIP ANIMATION */
 
 .header .brand {
   position: relative;
@@ -918,40 +918,26 @@ header.site-header > .palm-tree {
   overflow: hidden;
 }
 
-/* Keep the business name in front of the ship */
 .header .brand-name {
   position: relative;
   z-index: 2;
-  text-shadow: 0 2px 5px #170725;
-}
-
-
-/* BREEZY'S RESPONSIVE SAILING SHIP */
-
-.header .brand {
-  position: relative !important;
-  isolation: isolate;
-  overflow: hidden;
-}
-
-.header .brand-name {
-  position: relative;
-  z-index: 2;
+  text-align: center;
 }
 
 .header .sailing-ship {
-  position: absolute !important;
-  top: 50% !important;
-  right: auto !important;
-  z-index: 1 !important;
-  display: block !important;
-  font-size: 38px !important;
-  line-height: 1 !important;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 100%;
+  font-size: 38px;
+  line-height: 1;
   pointer-events: none;
-  animation: breezyShipAcross 8s linear infinite !important;
+  white-space: nowrap;
+
+  animation: breezyShipSail 7s linear both;
 }
 
-@keyframes breezyShipAcross {
+@keyframes breezyShipSail {
   0% {
     left: 100%;
     transform: translateY(-50%);
@@ -967,6 +953,8 @@ header.site-header > .palm-tree {
 
 @media (prefers-reduced-motion: reduce) {
   .header .sailing-ship {
-    animation: breezyShipAcross 5s linear infinite !important;
+    animation: none;
+    left: 0;
+    transform: translate(-100%, -50%);
   }
 }
