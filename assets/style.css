@@ -1070,51 +1070,6 @@ header.site-header > .palm-tree {
 }
 /* TROPICAL HEADER SHIP FIX */
 
-.header .brand {
-  position: relative;
-  isolation: isolate;
-}
-
-.header .ship-ocean {
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 75px !important;
-  overflow: hidden !important;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.header .brand-name {
-  position: relative;
-  z-index: 2;
-}
-
-.header .moving-cruise-ship {
-  position: absolute !important;
-  width: 110px !important;
-  height: auto !important;
-  top: auto !important;
-  bottom: 0 !important;
-  left: 100%;
-  right: auto !important;
-
-  transform: none;
-  animation: breezyOceanSail 9s linear infinite !important;
-}
-
-@keyframes breezyOceanSail {
-  from {
-    left: 100%;
-  }
-
-  to {
-    left: -110px;
-  }
-}
-
 /* BREEZY'S CRUISE SHIP - CLEAN ANIMATION */
 
 .header {
