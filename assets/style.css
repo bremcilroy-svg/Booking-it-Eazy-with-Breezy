@@ -1069,7 +1069,7 @@ body:not(.on-home) .ship-ocean {
 .header .tropical-brand-title {
   display: none !important;
 }
-/* FIX HEADER LAYOUT - VERSION 34 */
+/* FIX HEADER LAYOUT - VERSION 35 */
 
 .header {
   display: flex !important;
@@ -1080,25 +1080,33 @@ body:not(.on-home) .ship-ocean {
 
 .header .navwrap {
   order: 1 !important;
-  min-height: 0 !important;
   padding: 8px 14px !important;
 }
 
 .header .tropical-banner {
   order: 2 !important;
+  position: relative !important;
   display: block !important;
   width: 100% !important;
-  aspect-ratio: 3 / 2 !important;
+
+  /* Match the original image proportions */
+  aspect-ratio: 3 / 1 !important;
   height: auto !important;
-  margin: 0 !important;
+
   background-image: url("../assets/tropical-header.png") !important;
   background-size: 100% 100% !important;
   background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  margin: 0 !important;
+  overflow: hidden !important;
 }
 
 .header .header-trip-bar {
   order: 3 !important;
+  position: relative !important;
   padding: 12px 16px !important;
+  background: #170927 !important;
 }
 
 .header .tropical-brand-title {
