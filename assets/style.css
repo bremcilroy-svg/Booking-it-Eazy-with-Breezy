@@ -965,3 +965,9 @@ header.site-header > .palm-tree {
     display: none;
   }
 }
+/* Only animate while Home is visible */
+body:not(:has(#page-home:not(.hidden)))
+.sailing-ship {
+  animation-play-state: paused;
+  opacity: 0;
+}
