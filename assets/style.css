@@ -971,3 +971,52 @@ body:not(:has(#page-home:not(.hidden)))
   animation-play-state: paused;
   opacity: 0;
 }
+/* FIX BREEZY'S SAILING SHIP */
+
+.header .brand {
+  position: relative !important;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.header .brand-name {
+  position: relative;
+  z-index: 2;
+}
+
+.header .sailing-ship {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0 !important;
+  right: auto !important;
+  z-index: 1 !important;
+
+  display: block !important;
+  width: auto !important;
+  font-size: 38px !important;
+  line-height: 1 !important;
+  pointer-events: none;
+
+  animation: breezySailingFix 9s linear infinite !important;
+  will-change: transform;
+}
+
+@keyframes breezySailingFix {
+  0% {
+    transform: translate(700px, -50%);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-80px, -50%);
+    opacity: 0;
+  }
+}
