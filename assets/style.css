@@ -910,3 +910,58 @@ header.site-header > .palm-tree {
     font-size: clamp(26px, 6vw, 42px) !important;
   }
 }
+/* BREEZY'S SAILING CRUISE SHIP */
+
+.header .brand {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Keep the business name in front of the ship */
+.header .brand-name {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 5px #170725;
+}
+
+/* Ship sails from right to left */
+.header .sailing-ship {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index: 1;
+  font-size: 36px;
+  line-height: 1;
+  pointer-events: none;
+  animation: breezyShipSail 12s linear infinite;
+}
+
+@keyframes breezyShipSail {
+  0% {
+    left: 100%;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    left: -60px;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .sailing-ship {
+    animation: none;
+    display: none;
+  }
+}
