@@ -761,3 +761,69 @@ a.btn,
     font-size: 26px;
   }
 }
+/* BOOK IT EAZY WITH BREEZY */
+/* Tropical palm-tree header */
+
+/* Full tropical header background */
+header.site-header {
+  position: relative;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(22, 5, 43, 0.90),
+      rgba(27, 8, 51, 0.72),
+      rgba(22, 5, 43, 0.90)
+    ),
+    url("../hero-paradise.jpg")
+      center center / cover no-repeat !important;
+}
+
+/* Keep header content above the background */
+header.site-header .navwrap {
+  position: relative;
+  z-index: 2;
+}
+
+/* Business name */
+header.site-header .brand {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+header.site-header .brand-name {
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 5vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #140824;
+}
+
+header.site-header .brand-name small {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 7px;
+  text-transform: uppercase;
+}
+
+/* Hide only the stray decorative palm */
+header.site-header > .palm,
+header.site-header > .palm-tree {
+  display: none !important;
+}
+
+/* Mobile-friendly business name */
+@media (max-width: 768px) {
+  header.site-header .brand-name {
+    font-size: clamp(20px, 5.5vw, 30px);
+  }
+
+  header.site-header .brand-name small {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+}
