@@ -1049,3 +1049,19 @@ body:not(.on-home) .ship-ocean {
 .header .tropical-brand-title span {
   display: block;
 }
+/* Elegant glowing tropical lettering */
+.header .tropical-brand-title {
+  font-family: "Great Vibes", cursive !important;
+  font-size: clamp(44px, 9vw, 86px) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.05 !important;
+
+  color: #fff2ff !important;
+
+  text-shadow:
+    2px 3px 0 #47145e,
+    3px 5px 2px #260a43,
+    0 0 8px #f0aaff,
+    0 0 18px #b94eff;
+}
