@@ -1114,56 +1114,20 @@ header.site-header > .palm-tree {
     left: -110px;
   }
 }
-/* Ship sails across the full tropical header */
+
+/* BREEZY'S CRUISE SHIP - CLEAN ANIMATION */
 
 .header {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
-}
-
-.header .navbar {
-  position: relative;
-  z-index: 3;
+  overflow: hidden;
 }
 
 .header .ship-ocean {
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
-  bottom: 30px !important;
-  width: 100% !important;
-  height: 90px !important;
-  overflow: hidden !important;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.header .moving-cruise-ship {
-  position: absolute !important;
-  width: 120px !important;
-  height: auto !important;
-  bottom: 0 !important;
-  top: auto !important;
-  left: 100%;
-  right: auto !important;
-  transform: none !important;
-  animation: tropicalShipSail 10s linear infinite !important;
-}
-
-@keyframes tropicalShipSail {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: -120px;
-  }
-}
-/* Keep the ship near the waterline */
-.header .ship-ocean {
-  position: absolute !important;
-  left: 0 !important;
-  bottom: 0 !important;
+  bottom: 12px !important;
   width: 100% !important;
   height: 110px !important;
   overflow: hidden !important;
@@ -1173,18 +1137,31 @@ header.site-header > .palm-tree {
 
 .header .moving-cruise-ship {
   position: absolute !important;
+  display: block !important;
+  width: 130px !important;
+  max-width: none !important;
+  height: auto !important;
   top: auto !important;
   bottom: 0 !important;
-  width: 130px !important;
-  height: auto !important;
-  animation: breezyWaterCruise 12s linear infinite !important;
+  right: auto !important;
+  left: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: breezyOceanSail 12s linear infinite !important;
 }
 
-@keyframes breezyWaterCruise {
+@keyframes breezyOceanSail {
   from {
-    left: 100%;
+    transform: translateX(100vw);
   }
   to {
-    left: -130px;
+    transform: translateX(-150px);
   }
+}
+
+/* Keep buttons and navigation clickable */
+.header .navbar,
+.header .navwrap {
+  position: relative;
+  z-index: 3;
 }
