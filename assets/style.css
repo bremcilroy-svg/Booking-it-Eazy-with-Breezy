@@ -995,7 +995,7 @@ header.site-header > .palm-tree {
 
 @keyframes breezyShipAcross {
   0% {
-    transform: translate(calc(100% + 20px), -50%);
+    transform: translate(calc(100% + 10px), -50%);
     opacity: 1;
   }
 
@@ -1008,6 +1008,6 @@ header.site-header > .palm-tree {
 
 @media (prefers-reduced-motion: reduce) {
   .header .sailing-ship {
-    animation: breezyShipAcross 6.5s linear infinite !important;
+    animation: breezyShipAcross 7.5s linear infinite !important;
   }
 }
