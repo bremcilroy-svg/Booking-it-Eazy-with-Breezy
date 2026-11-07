@@ -943,22 +943,6 @@ header.site-header > .palm-tree {
   z-index: 0;
 }
 
-.header::before {
-  content: "🌴";
-  left: -18px;
-  transform: rotate(-15deg);
-}
-
-.header::after {
-  content: "🌴";
-  right: -18px;
-  transform: scaleX(-1) rotate(-15deg);
-}
-
-/* Keep the header content above the palms */
-.header .navwrap {
-  position: relative;
-  z-index: 1;
 }
 /* Tropical animated header */
 .header {
@@ -1172,6 +1156,16 @@ header.site-header > .palm-tree {
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
+}
+
+/* HEADER BUTTON SPACING */
+
+.header .navwrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 16px;
 }
 /* FINAL TROPICAL HEADER ADJUSTMENTS */
 
