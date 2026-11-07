@@ -113,3 +113,22 @@ if (document.readyState === "loading") {
 } else {
   startBreezyWebsite();
 }
+/* Keep the ship sailing only on Home */
+function updateBreezyShip() {
+  const homePage = document.getElementById("page-home");
+  const isHome = homePage &&
+    !homePage.hidden &&
+    getComputedStyle(homePage).display !== "none";
+
+  document.body.classList.toggle("on-home", !!isHome);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateBreezyShip();
+
+  document.querySelectorAll("[data-page]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      requestAnimationFrame(updateBreezyShip);
+    });
+  });
+});
