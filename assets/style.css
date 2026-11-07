@@ -762,143 +762,136 @@ a.btn,
   }
 }
 
-/* =========================================
-   BOOK IT EAZY WITH BREEZY
-   CLEAN TROPICAL HEADER
-   ========================================= */
+/* BREEZY'S CLEAN TROPICAL HEADER */
 
 .header {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
-  min-height: 0;
-  height: auto;
   padding: 0;
-  overflow: hidden;
   background: #170927;
-  border-bottom: none;
+  overflow: visible;
   backdrop-filter: none;
+  border: none;
 }
 
-/* Navigation stays above the artwork */
+/* Small purple bar for wave menu */
 
 .header .navwrap {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 0;
   width: 100%;
   max-width: none;
-  min-height: 84px;
-  padding: 12px 16px;
+  min-height: 0;
   margin: 0;
+  padding: 8px 14px;
   background: #170927;
 }
 
-/* Tropical artwork occupies its own area */
-
-.header::after {
-  content: "";
-  display: block;
-  position: relative;
-  order: 2;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  background-image: url("../assets/tropical-header.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  pointer-events: none;
-}
-
-/* Animated ship over the ocean */
-
-.header .ship-ocean {
-  position: absolute;
-  z-index: 4;
-  left: 0;
-  right: 0;
-  bottom: 10%;
-  width: 100%;
-  height: 65px;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-/* Ship appearance */
-
-.header .moving-cruise-ship {
-  position: absolute;
-  display: block;
-  width: 105px;
-  max-width: none;
-  height: auto;
-  left: 0;
-  top: 0;
-  animation: breezySail 14s linear infinite;
-}
-
-/* Right to left, facing left */
-
-@keyframes breezySail {
-  from {
-    transform: translateX(100vw) scaleX(-1);
-  }
-
-  to {
-    transform: translateX(-110px) scaleX(-1);
-  }
-}
-
-/* Wave navigation button */
+/* Wave menu on the left */
 
 .header .wave-menu-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 58px;
-  height: 58px;
-  padding: 8px;
-  flex-shrink: 0;
-  background: #170b30;
-  border: 1px solid #a8cce8;
-  border-radius: 12px;
-}
-
-.header .wave-menu-toggle svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke-width: 4.5;
-  stroke-linecap: round;
-}
-
-/* Plan My Trip button */
-
-.header .navwrap > .btn {
-  flex-shrink: 0;
   margin: 0;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
 }
 
-/* Mobile navigation */
+/* Tropical picture */
+
+.header .tropical-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-image: url("../assets/tropical-header.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Remove old generated header picture */
+
+.header::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ship stays inside the picture */
+
+.header .ship-ocean {
+  position: absolute;
+  top: auto;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 55px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.header .moving-cruise-ship {
+  position: absolute;
+  display: block;
+  width: 100px;
+  max-width: none;
+  height: auto;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  animation: breezySail 14s linear infinite;
+}
+
+/* Ship sails right to left */
+
+@keyframes breezySail {
+  from {
+    transform: translateX(100vw) scaleX(-1);
+  }
+  to {
+    transform: translateX(-110px) scaleX(-1);
+  }
+}
+
+/* Purple bar beneath the picture */
+
+.header .header-trip-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  background: #170927;
+}
+
+.header .header-trip-bar .btn {
+  margin: 0;
+  padding: 12px 28px;
+  font-size: 16px;
+}
+
+/* Dropdown navigation */
 
 @media (max-width: 1100px) {
   .header #main-nav {
-    display: none;
+    display: none !important;
     width: 100%;
-    order: 3;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    margin-top: 10px;
   }
 
   .header #main-nav.is-open {
-    display: flex;
+    display: flex !important;
   }
 
   .header #main-nav button {
@@ -907,7 +900,13 @@ a.btn,
   }
 }
 
-/* Keep ship off other pages */
+@media (min-width: 1101px) {
+  .header .wave-menu-toggle {
+    display: none;
+  }
+}
+
+/* Hide ship outside homepage */
 
 body:not(.on-home) .ship-ocean {
   display: none;
