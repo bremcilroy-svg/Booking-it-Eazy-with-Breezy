@@ -953,8 +953,42 @@ header.site-header > .palm-tree {
 
 @media (prefers-reduced-motion: reduce) {
   .header .sailing-ship {
-    animation: none;
+    animation: breezyShipSail 9s linear infinite;
     left: 0;
     transform: translate(-100%, -50%);
   }
 }
+/* Sail only while the Home page is active */
+body:not(.on-home) .header .sailing-ship {
+  animation: none !important;
+  opacity: 0;
+}
+
+/* Keep the ship behind the title */
+.header .brand-name {
+  position: relative;
+  z-index: 2;
+}
+
+.header .sailing-ship {
+  z-index: 1;
+}
+/* Keep the ship sailing only on Home */
+function updateBreezyShip() {
+  const homePage = document.getElementById("page-home");
+  const isHome = homePage &&
+    !homePage.hidden &&
+    getComputedStyle(homePage).display !== "none";
+
+  document.body.classList.toggle("on-home", !!isHome);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  updateBreezyShip();
+
+  document.querySelectorAll("[data-page]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      requestAnimationFrame(updateBreezyShip);
+    });
+  });
+});
