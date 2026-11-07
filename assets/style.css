@@ -1184,3 +1184,68 @@ header.site-header > .palm-tree {
   top: 76% !important;
   height: 65px !important;
 }
+/* ==================================
+   BREEZY HEADER - NAVIGATION ABOVE ART
+   ================================== */
+
+/* Make the header tall enough for the artwork */
+.header {
+  position: relative !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+
+  /* Preserve the tropical image proportions */
+  background-image: url("../assets/tropical-header.png") !important;
+  background-size: 100% auto !important;
+  background-position: center bottom !important;
+  background-repeat: no-repeat !important;
+  background-color: #170927 !important;
+}
+
+/* Navigation bar above the artwork */
+.header .navwrap {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  min-height: 84px !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  background: #170927 !important;
+}
+
+/* Keep the menu compact */
+.header .wave-menu-toggle {
+  width: 58px !important;
+  height: 58px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Keep the Plan My Trip button compact */
+.header .navwrap > .btn {
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Reserve space below navigation for the artwork */
+.header::after {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  pointer-events: none !important;
+}
+
+/* Keep ship above the tropical artwork */
+.header .ship-ocean {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 5% !important;
+  height: 65px !important;
+  z-index: 4 !important;
+}
