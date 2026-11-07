@@ -978,7 +978,7 @@ body:not(.on-home) .ship-ocean {
 /* Ship farther away, near the horizon */
 
 .header .ship-ocean {
-  bottom: 19% !important;
+  bottom: 12% !important;
   height: 55px !important;
 }
 
