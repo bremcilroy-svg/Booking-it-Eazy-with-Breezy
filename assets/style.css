@@ -967,7 +967,7 @@ header.site-header > .palm-tree {
 }
 
 }
-/* FIX BREEZY'S SAILING SHIP */
+/* BREEZY'S RESPONSIVE SAILING SHIP */
 
 .header .brand {
   position: relative !important;
@@ -986,33 +986,28 @@ header.site-header > .palm-tree {
   left: 0 !important;
   right: auto !important;
   z-index: 1 !important;
-
   display: block !important;
-  width: auto !important;
   font-size: 38px !important;
   line-height: 1 !important;
   pointer-events: none;
-
-  animation: breezySailingFix 9s linear infinite !important;
-  will-change: transform;
+  animation: breezyShipAcross 8s linear infinite !important;
 }
 
-@keyframes breezySailingFix {
+@keyframes breezyShipAcross {
   0% {
-    transform: translate(700px, -50%);
-    opacity: 0;
-  }
-
-  8% {
-    opacity: 1;
-  }
-
-  85% {
+    transform: translate(100vw, -50%);
     opacity: 1;
   }
 
   100% {
     transform: translate(-80px, -50%);
-    opacity: 0;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .sailing-ship {
+    animation: none !important;
+    display: none !important;
   }
 }
