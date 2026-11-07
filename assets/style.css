@@ -985,3 +985,32 @@ body:not(.on-home) .ship-ocean {
   width: 70px !important;
   top: 0 !important;
 }
+/* Business name over tropical sunset */
+
+.header .tropical-brand-title {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  width: 90%;
+  text-align: center;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(34px, 7vw, 70px);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 0.95;
+
+  color: #fff0ff;
+  text-shadow:
+    2px 3px 0 #54206e,
+    0 0 12px #e879f9,
+    0 5px 15px #170927;
+
+  pointer-events: none;
+}
+
+.header .tropical-brand-title span {
+  display: block;
+}
