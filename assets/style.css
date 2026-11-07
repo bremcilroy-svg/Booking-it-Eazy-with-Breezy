@@ -1120,3 +1120,56 @@ header.site-header > .palm-tree {
   }
 }
 
+/* Keep the ship inside the tropical header */
+.header {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Position ship over the ocean */
+.header .ship-ocean {
+  position: absolute !important;
+  top: 78% !important;
+  bottom: auto !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 70px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: 4 !important;
+}
+
+/* Animate the cruise ship */
+.header .moving-cruise-ship {
+  position: absolute !important;
+  width: 105px !important;
+  height: auto !important;
+  top: 0 !important;
+  bottom: auto !important;
+  left: 0 !important;
+  animation: breezySail 14s linear infinite !important;
+}
+
+@keyframes breezySail {
+  from {
+    transform: translateX(100vw) scaleX(-1);
+  }
+  to {
+    transform: translateX(-110px) scaleX(-1);
+  }
+}
+
+/* Keep the wave menu small */
+.wave-menu-toggle {
+  width: 58px !important;
+  height: 58px !important;
+  padding: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.wave-menu-toggle svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+}
