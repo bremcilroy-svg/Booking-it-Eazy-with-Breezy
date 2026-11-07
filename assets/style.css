@@ -1167,11 +1167,20 @@ header.site-header > .palm-tree {
   gap: 12px;
   padding: 18px 16px;
 }
-/* FINAL TROPICAL HEADER ADJUSTMENTS */
+/* TROPICAL HEADER — MOBILE ADJUSTMENT */
 
 .header {
+  position: relative !important;
+  min-height: 360px !important;
   background-image: url("../assets/tropical-header.png") !important;
-  background-size: contain !important;
-  background-position: center top !important;
+  background-size: 100% 100% !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
+  overflow: hidden !important;
+}
+/* Position cruise ship near the water */
+
+.header .ship-ocean {
+  top: 76% !important;
+  height: 65px !important;
 }
