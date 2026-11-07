@@ -995,19 +995,22 @@ header.site-header > .palm-tree {
 
 @keyframes breezyShipAcross {
   0% {
-    transform: translate(calc(100% + 10px), -50%);
+    left: 100%;
+    transform: translateY(-50%);
     opacity: 1;
   }
 
   100% {
-    transform: translate(-80px, -50%);
+    left: 0;
+    transform: translate(-100%, -50%);
     opacity: 1;
   }
 }
 
 
+
 @media (prefers-reduced-motion: reduce) {
   .header .sailing-ship {
-    animation: breezyShipAcross 7.5s linear infinite !important;
+    animation: breezyShipAcross 7s linear infinite !important;
   }
 }
