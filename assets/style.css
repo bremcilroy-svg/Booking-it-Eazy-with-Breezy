@@ -1008,7 +1008,6 @@ header.site-header > .palm-tree {
 
 @media (prefers-reduced-motion: reduce) {
   .header .sailing-ship {
-    animation: none !important;
-    display: none !important;
+    animation: breezyShipAcross 6.5s linear infinite !important;
   }
 }
