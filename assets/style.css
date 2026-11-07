@@ -946,4 +946,24 @@ header.site-header > .palm-tree {
 .header .brand-name {
   position: relative;
   z-index: 2;
+ }
+}
+/* TEMPORARY SHIP LOOP TEST */
+
+.header .sailing-ship {
+  animation: none !important;
+  animation: breezyTestSail 5s linear infinite !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@keyframes breezyTestSail {
+  from {
+    left: 100%;
+    transform: translateY(-50%);
+  }
+  to {
+    left: 0;
+    transform: translate(-100%, -50%);
+  }
 }
