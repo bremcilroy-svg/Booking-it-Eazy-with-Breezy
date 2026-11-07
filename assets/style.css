@@ -1114,3 +1114,48 @@ header.site-header > .palm-tree {
     left: -110px;
   }
 }
+/* Ship sails across the full tropical header */
+
+.header {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.header .navbar {
+  position: relative;
+  z-index: 3;
+}
+
+.header .ship-ocean {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 30px !important;
+  width: 100% !important;
+  height: 90px !important;
+  overflow: hidden !important;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header .moving-cruise-ship {
+  position: absolute !important;
+  width: 120px !important;
+  height: auto !important;
+  bottom: 0 !important;
+  top: auto !important;
+  left: 100%;
+  right: auto !important;
+  transform: none !important;
+  animation: tropicalShipSail 10s linear infinite !important;
+}
+
+@keyframes tropicalShipSail {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -120px;
+  }
+}
