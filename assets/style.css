@@ -1034,58 +1034,22 @@ header.site-header > .palm-tree {
   z-index: 2;
 }
 
-/* Moving cruise ship */
-.moving-cruise-ship {
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  width: clamp(100px, 24vw, 260px);
-  height: auto;
-  animation: tropicalCruise 15s linear infinite;
-  will-change: transform;
-}
-
-/* Sail right to left, continuously */
-@keyframes tropicalCruise {
-  from {
-    transform: translateX(100vw);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .moving-cruise-ship {
-    animation: @keyframes tropicalCruise {
-  from {
-    transform: translateX(100vw) scaleX(-1);
-  }
-  to {
-    transform: translateX(-100%) scaleX(-1);
-  }
-}
-    transform: translateX(40vw);
-  }
-}
 /* TROPICAL HEADER SHIP FIX */
 
-/* BREEZY'S CRUISE SHIP - CLEAN ANIMATION */
+/* BREEZY'S CRUISE SHIP - FINAL ANIMATION */
 
 .header {
   position: relative;
-  isolation: isolate;
   overflow: hidden;
 }
 
 .header .ship-ocean {
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 12px !important;
-  width: 100% !important;
-  height: 110px !important;
-  overflow: hidden !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  height: 110px;
+  overflow: hidden;
   pointer-events: none;
   z-index: 1;
 }
@@ -1096,34 +1060,25 @@ header.site-header > .palm-tree {
   width: 130px !important;
   max-width: none !important;
   height: auto !important;
-  top: auto !important;
   bottom: 0 !important;
-  right: auto !important;
+  top: auto !important;
   left: 0 !important;
+  right: auto !important;
   opacity: 1 !important;
-  transform: none;
-animation: breezyOceanSail 12s linear infinite !important;
-
+  animation: breezyOceanSail 12s linear infinite !important;
+}
 
 @keyframes breezyOceanSail {
-  0% {
+  from {
     transform: translateX(100vw);
   }
 
-  100% {
+  to {
     transform: translateX(-150px);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .moving-cruise-ship {
-    animation: @keyframes breezyOceanSail {
-  0% {
-    transform: translateX(100vw);
-  }
-
-  100% {
-    transform: translateX(-150px);
-  }
+.header .navwrap {
+  position: relative;
+  z-index: 3;
 }
-
