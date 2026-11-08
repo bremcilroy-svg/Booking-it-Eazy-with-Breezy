@@ -972,7 +972,7 @@ body:not(.on-home) .ship-ocean { display: none; }
   z-index: 11 !important;
   pointer-events: auto !important;
   right: 5%;
-  bottom: 9% !important;
+  bottom: 11% !important;
   touch-action: manipulation;
 }
 
