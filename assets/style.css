@@ -981,3 +981,22 @@ body:not(.on-home) .ship-ocean { display: none; }
     right: 8%;
   }
 }
+/* Fix interactive ship position only */
+
+.header .tropical-banner .ship-ocean {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+.header .tropical-banner .interactive-ship {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 8% !important;
+  right: 8% !important;
+  width: 75px !important;
+  pointer-events: auto !important;
+}
