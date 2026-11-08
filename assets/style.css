@@ -1129,7 +1129,7 @@ body:not(.on-home) .ship-ocean {
 .header .tropical-banner .ship-ocean {
   position: absolute !important;
   top: auto !important;
-  bottom: 12% !important;
+  bottom: 14% !important;
   left: 0 !important;
   right: 0 !important;
   height: 55px !important;
@@ -1329,3 +1329,7 @@ body:not(.on-home) .ship-ocean {
 .header .breezy-flowers {
   z-index: 2 !important;
 }
+<div class="tropical-brand-title">
+  <span class="brand-line-one">Booking It Eazy</span>
+  <span class="brand-line-two">With Breezy</span>
+</div>
