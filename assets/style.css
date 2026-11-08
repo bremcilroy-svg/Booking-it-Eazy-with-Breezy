@@ -921,3 +921,63 @@ body:not(.on-home) .ship-ocean { display: none; }
     transform: translateX(-85px) scaleX(-1);
   }
 }
+/* Interactive Breezy Cruise Ship */
+
+.header .tropical-banner .ship-ocean {
+  position: absolute !important;
+  bottom: 12% !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 75px !important;
+  overflow: hidden !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
+
+.header .interactive-ship {
+  position: absolute;
+  right: 8%;
+  top: 0;
+  width: 90px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 6;
+  touch-action: manipulation;
+}
+
+.header .interactive-ship img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: none !important;
+  transform: scaleX(-1);
+}
+
+.header .interactive-ship.sailing {
+  animation: shipAdventure 9s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes shipAdventure {
+  0% {
+    right: 8%;
+  }
+
+  85% {
+    right: calc(100% + 100px);
+  }
+
+  85.01% {
+    right: -110px;
+  }
+
+  100% {
+    right: 8%;
+  }
+}
