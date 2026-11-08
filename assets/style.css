@@ -909,7 +909,7 @@ body:not(.on-home) .ship-ocean { display: none; }
 .header .tropical-banner #interactive-ship {
   position: absolute !important;
   top: auto !important;
-  bottom: 5% !important;
+  bottom: 9% !important;
   left: auto !important;
   right: 5% !important;
   width: 75px !important;
@@ -956,4 +956,26 @@ body:not(.on-home) .ship-ocean { display: none; }
   100% {
     right: 5%;
   }
+}
+/* Final ship click and positioning fix */
+
+.header .tropical-banner {
+  position: relative;
+}
+
+.header .tropical-banner .ship-ocean {
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.header .tropical-banner #interactive-ship {
+  z-index: 11 !important;
+  pointer-events: auto !important;
+  right: 5%;
+  bottom: 9% !important;
+  touch-action: manipulation;
+}
+
+.header .tropical-banner #interactive-ship.sailing {
+  pointer-events: none !important;
 }
