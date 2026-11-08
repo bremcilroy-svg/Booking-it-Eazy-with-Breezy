@@ -1372,3 +1372,30 @@ body:not(.on-home) .ship-ocean {
   font-size: clamp(20px, 5vw, 62px);
   margin-top: -8px;
 }
+/* Original artwork + animated ocean + cruise ship */
+
+.header .tropical-banner {
+  background-image: url("../assets/tropical-header.png") !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+}
+
+.header .tropical-banner .tropical-background-video {
+  display: block !important;
+  position: absolute !important;
+
+  top: 65% !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 35% !important;
+
+  object-fit: cover !important;
+  object-position: center bottom !important;
+
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.header .tropical-banner .ship-ocean {
+  z-index: 3 !important;
+}
