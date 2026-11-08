@@ -20,6 +20,23 @@
   <link rel="stylesheet" href="assets/style.css?v=49">
 </head>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const ship = document.getElementById("interactive-ship");
+
+  if (!ship) return;
+
+  ship.addEventListener("click", () => {
+    if (ship.classList.contains("sailing")) return;
+
+    ship.classList.add("sailing");
+  });
+
+  ship.addEventListener("animationend", () => {
+    ship.classList.remove("sailing");
+  });
+});
+</script>
 
 <body>
 
