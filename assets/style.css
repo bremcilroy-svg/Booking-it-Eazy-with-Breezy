@@ -895,7 +895,7 @@ body:not(.on-home) .ship-ocean { display: none; }
 
 .header .tropical-banner .ship-ocean {
   position: absolute !important;
-  bottom: 2% !important;
+  bottom: 12% !important;
   top: auto !important;
   left: 0 !important;
   width: 100% !important;
@@ -925,7 +925,7 @@ body:not(.on-home) .ship-ocean { display: none; }
 
 .header .tropical-banner .ship-ocean {
   position: absolute !important;
-  bottom: 2% !important;
+  bottom: 12% !important;
   left: 0 !important;
   width: 100% !important;
   height: 75px !important;
