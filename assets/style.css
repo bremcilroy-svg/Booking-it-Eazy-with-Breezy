@@ -1230,3 +1230,48 @@ body:not(.on-home) .ship-ocean {
     opacity: 0.65;
   }
 }
+/* BREEZY'S SWAYING TROPICAL FLOWERS */
+
+.header .breezy-flowers {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.header .flower {
+  position: absolute;
+  bottom: 6%;
+  font-size: clamp(20px, 5vw, 38px);
+  transform-origin: bottom center;
+  animation: breezyFlowerSway 4s ease-in-out infinite alternate;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,.25));
+}
+
+.header .flower-left {
+  left: 3%;
+}
+
+.header .flower-right {
+  right: 4%;
+  animation-delay: -2s;
+}
+
+@keyframes breezyFlowerSway {
+  from {
+    transform: rotate(-9deg) translateY(0);
+  }
+
+  to {
+    transform: rotate(9deg) translateY(-4px);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .header .tropical-banner::after,
+  .header .flower {
+    animation: none !important;
+  }
+}
