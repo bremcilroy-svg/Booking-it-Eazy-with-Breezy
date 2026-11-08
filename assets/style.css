@@ -820,6 +820,17 @@ a.btn,
   -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
 }
+/* Breezy's cruise ship adjustment */
+.header .tropical-banner .ship-ocean {
+  bottom: 18% !important;
+  height: 65px !important;
+}
+
+.header .tropical-banner .moving-cruise-ship {
+  width: 85px !important;
+  top: 0 !important;
+}
+
 .header .tropical-banner .moving-cruise-ship {
   position: absolute;
   display: block;
