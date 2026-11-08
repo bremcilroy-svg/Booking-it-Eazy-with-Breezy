@@ -1329,7 +1329,46 @@ body:not(.on-home) .ship-ocean {
 .header .breezy-flowers {
   z-index: 2 !important;
 }
-<div class="tropical-brand-title">
-  <span class="brand-line-one">Booking It Eazy</span>
-  <span class="brand-line-two">With Breezy</span>
-</div>
+/* Tropical banner business name */
+
+.header .tropical-banner .tropical-brand-title {
+  display: flex !important;
+  position: absolute !important;
+  z-index: 5 !important;
+
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 95%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.header .tropical-banner .brand-line-one,
+.header .tropical-banner .brand-line-two {
+  display: block;
+
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-style: italic;
+  font-weight: bold;
+
+  color: #f3e8ff;
+
+  text-shadow:
+    0 2px 3px #39204d,
+    0 0 10px #b78be8,
+    0 0 20px #e5c5ff;
+}
+
+.header .tropical-banner .brand-line-one {
+  font-size: clamp(24px, 6vw, 76px);
+}
+
+.header .tropical-banner .brand-line-two {
+  font-size: clamp(20px, 5vw, 62px);
+  margin-top: -8px;
+}
