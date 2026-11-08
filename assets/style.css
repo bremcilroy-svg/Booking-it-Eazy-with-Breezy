@@ -812,8 +812,8 @@ a.btn,
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 17%;
-  height: 11%;
+  bottom: 20%;
+  height: 12%;
   overflow: hidden;
   z-index: 3;
   pointer-events: none;
@@ -822,7 +822,7 @@ a.btn,
 }
 /* Breezy's cruise ship adjustment */
 .header .tropical-banner .ship-ocean {
-  bottom: 18% !important;
+  bottom: 17% !important;
   height: 65px !important;
 }
 
@@ -972,7 +972,7 @@ body:not(.on-home) .ship-ocean { display: none; }
   z-index: 11 !important;
   pointer-events: auto !important;
   right: 5%;
-  bottom: 11% !important;
+  bottom: 9% !important;
   touch-action: manipulation;
 }
 
