@@ -1071,7 +1071,7 @@ body:not(.on-home) .ship-ocean {
   width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
-  aspect-ratio: 3 / 1 !important;
+  aspect-ratio: 19 / 9 !important;
   margin: 0 !important;
 
   background-image: url("../assets/tropical-header.png") !important;
