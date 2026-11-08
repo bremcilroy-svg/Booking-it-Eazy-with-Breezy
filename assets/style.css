@@ -1414,3 +1414,25 @@ body:not(.on-home) .ship-ocean {
 .header .tropical-banner .ship-ocean {
   z-index: 3 !important;
 }
+/* Keep tropical video visible */
+.header .tropical-banner {
+  position: relative !important;
+  aspect-ratio: 3 / 1 !important;
+  overflow: hidden !important;
+}
+
+.header .tropical-banner .tropical-background-video {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  z-index: 2 !important;
+}
+
+.header .tropical-banner .ship-ocean {
+  z-index: 3 !important;
+}
