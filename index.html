@@ -111,44 +111,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </div> <!-- End of navwrap -->
 
-  <div class="tropical-banner">
-
 <div class="tropical-banner">
 
-
-<video
-  class="tropical-background-video"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  poster="assets/tropical-header.png"
->
-<source src="assets/breezy-seamless-loop.mp4" type="video/mp4">
-</video>
-
-  <div class="ship-ocean" aria-hidden="true">
-    
-<div class="ship-ocean">
-  <button
-    id="interactive-ship"
-    class="interactive-ship"
-    type="button"
-    aria-label="Tap to sail the cruise ship"
+  <video
+    class="tropical-background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="assets/tropical-header.png"
   >
-    <img src="assets/cruise-ship.png" alt="">
+    <source
+      src="assets/breezy-seamless-loop.mp4"
+      type="video/mp4"
+    >
+  </video>
+
+  <!-- Interactive Cruise Ship -->
+  <div class="ship-ocean">
+    <button
+      id="interactive-ship"
+      class="interactive-ship"
+      type="button"
+      aria-label="Tap to sail the cruise ship"
+    >
+      <img
+        src="assets/cruise-ship.png"
+        alt=""
+      >
+    </button>
+  </div>
+
+</div>
+
+<div class="header-trip-bar">
+  <button class="btn small" data-page="contact">
+    Plan My Trip
   </button>
 </div>
 
-</div>
-
-  <div class="header-trip-bar">
-    <button class="btn small" data-page="contact">
-      Plan My Trip
-    </button>
-  </div>
 </header>
+
 
 <main>
 
