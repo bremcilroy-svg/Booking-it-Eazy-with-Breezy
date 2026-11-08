@@ -1302,3 +1302,30 @@ body:not(.on-home) .ship-ocean {
     display: none;
   }
 }
+/* BREEZY'S TROPICAL VIDEO FINISHING TOUCHES */
+
+.header .tropical-banner {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+.header .tropical-background-video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Keep the cruise ship above the video */
+.header .tropical-banner .ship-ocean {
+  z-index: 3 !important;
+}
+
+/* Keep decorative flowers above the video */
+.header .breezy-flowers {
+  z-index: 2 !important;
+}
