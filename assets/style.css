@@ -1071,7 +1071,7 @@ body:not(.on-home) .ship-ocean {
   width: 100% !important;
   height: auto !important;
   min-height: 0 !important;
-  aspect-ratio: 19 / 9 !important;
+  aspect-ratio: 3 / 1 !important;
   margin: 0 !important;
 
   background-image: url("../assets/tropical-header.png") !important;
@@ -1392,6 +1392,21 @@ body:not(.on-home) .ship-ocean {
   object-fit: cover !important;
   object-position: center bottom !important;
 
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.header .tropical-banner .ship-ocean {
+  z-index: 3 !important;
+}
+/* Display the full tropical header video */
+.header .tropical-banner .tropical-background-video {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
   z-index: 1 !important;
   pointer-events: none !important;
 }
