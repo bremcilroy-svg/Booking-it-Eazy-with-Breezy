@@ -1195,3 +1195,38 @@ body:not(.on-home) .ship-ocean {
     animation: none !important;
   }
 }
+/* BREEZY'S ANIMATED TROPICAL WATER */
+
+.header .tropical-banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28%;
+  pointer-events: none;
+  z-index: 1;
+
+  background: repeating-linear-gradient(
+    175deg,
+    transparent 0px,
+    rgba(130, 220, 255, 0.07) 3px,
+    transparent 8px,
+    transparent 22px
+  );
+
+  background-size: 200% 100%;
+  animation: breezyWaterShimmer 7s ease-in-out infinite alternate;
+}
+
+@keyframes breezyWaterShimmer {
+  from {
+    background-position: 0% 0%;
+    opacity: 0.25;
+  }
+
+  to {
+    background-position: 100% 0%;
+    opacity: 0.65;
+  }
+}
