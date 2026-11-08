@@ -891,3 +891,33 @@ body:not(.on-home) .ship-ocean { display: none; }
   .header .moving-cruise-ship, .header .flower { animation: none !important; }
   /* Video stays visible; playback behavior is controlled by the HTML/browser. */
 }
+/* Consistent cruise ship on iPhone and Android */
+
+.header .tropical-banner .ship-ocean {
+  position: absolute !important;
+  bottom: 12% !important;
+  top: auto !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 45px !important;
+  overflow: hidden !important;
+  z-index: 3 !important;
+}
+
+.header .tropical-banner .moving-cruise-ship {
+  position: absolute !important;
+  width: 75px !important;
+  height: auto !important;
+  top: 0 !important;
+  left: 0 !important;
+  animation: breezySailFixed 14s linear infinite !important;
+}
+
+@keyframes breezySailFixed {
+  from {
+    transform: translateX(100vw) scaleX(-1);
+  }
+  to {
+    transform: translateX(-85px) scaleX(-1);
+  }
+}
